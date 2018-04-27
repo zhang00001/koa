@@ -1,0 +1,55 @@
+{%extends "layout.html"%}
+{%block content%}
+<div class="home-main-content">
+        <div class="drop-down">
+            <button class="drop-down-button"></button>
+        </div>
+        <div class="sort">
+            <button class="sort-condition selected h6app-radial-out">最新</button>
+            <button class="sort-condition h6app-radial-out">最热</button>
+            <button class="sort-condition h6app-radial-out">好评</button>
+            <button class="sort-condition h6app-radial-out">价格</button>
+            <div class="price-img"></div>
+            <div class="count">总计： 找到2124个案例</div>
+        </div>
+        <div class="home-list">
+            <div class="swiper-container swiper-container-horizontal">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="/customMadeH5?hmsr=pczhannei&amp;hmpl=homebanner">
+                            <img src="https://static.www.h6app.com/img/2.813b76d.jpg">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="/miniPrograms?hmsr=pczhannei&amp;hmpl=homebanner">
+                            <img src="https://static.www.h6app.com/img/1.dd87336.jpg">
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="home-list-container">
+                {%for item in list%}
+                <div class="list-item h6app-grow">
+                    <a href="/case?id=2516" target="_blank" class="case-router">
+                        <div class="list-item-score">0.0
+                            <span>分</span>
+                        </div>
+                        <img src="{{item.thumbnailsUrl}}" class="home-list-img">
+                        <span title="滴滴：有车一族省钱指南" class="home-list-title">滴滴：有车一族省钱指南</span>
+                        <span title="100000" class="home-list-estimate">￥100000</span>
+                    </a>
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+        <!---->
+        <div class="load-btn-line">
+            <!-- <button class="load-more-btn">加载更多</button> -->
+            {%for item in pageArr %}
+            <a href="/page/{{loop.index}}">{{loop.index}}</a>
+            {%endfor%}
+        </div>
+        <!---->
+    </div>
+{%endblock%}

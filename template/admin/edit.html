@@ -1,0 +1,41 @@
+
+{%extends "layout.html"%}
+{%block content%}
+<div class="box box-warning">
+        <div class="box-header with-border">
+          <h3 class="box-title">g编辑产品</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <form role="form" method="POST">
+            <!-- text input -->
+            <div class="form-group">
+              <label>title</label>
+              <input type="text" class="form-control" placeholder="标题" name="title" value="{{list.title}}">
+            </div>
+            <div class="form-group">
+              <label>缩略图</label>
+              <input type="text" class="form-control" placeholder="缩略图" name="thumbnailsUrl" value="{{list.thumbnail}}">
+            </div>
+
+            <!-- textarea -->
+            <div class="form-group">
+              <label>价格</label>
+              <textarea class="form-control" rows="3" placeholder="价格" name="price" type="number" >{{list.price}} </textarea>
+            </div>
+            <div class="form-group">
+              <label>评级</label>
+              <textarea class="form-control" rows="3" placeholder="评价" name="score">{{list.score}}</textarea>
+            </div>
+            <div class="form-group">
+                    <label>动图</label>
+                    <textarea class="form-control" rows="3" placeholder="动图" name="gifUrl"  >{{list.gifUrl}}</textarea>
+                  </div>
+                 
+            <!-- input states -->
+         <button type="submit">提交</button>
+
+          </form>
+        </div>
+        <!-- /.box-body -->
+      </div>{%endblock%}

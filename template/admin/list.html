@@ -1,0 +1,54 @@
+
+{%extends "layout.html" %}
+    <!-- Main content -->
+    {%block content%}
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Hover Data Table</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>title</th>
+                  <th>缩略图</th>
+                  <th>价格</th>
+                  <th>评级</th>
+                  <th>动图</th>'
+<th>操作</th>            </tr>
+                </thead>
+                <tbody>
+                    {%for item in list%}
+                <tr>
+                  <td>{{item.title}}</td>
+                  <td>{{item.thumbnailsUrl}}
+                  </td>
+                  <td>{{item.price}}</td>
+                  <td> {{item.score}}</td>
+                  <td>{{item.gifUrl}}</td>
+                  <td>
+                      <a href="/list/edit/{{''+item._id}}">编辑</a>
+                      <a href="/list/delete/{{''+item._id}}">删除</a>
+                  </td>
+                </tr>
+               {%endfor%}
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+     
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>{%endblock%}
